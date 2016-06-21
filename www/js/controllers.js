@@ -39,18 +39,43 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+  $scope.notes = [
+    {
+      title: 'Reggae',
+      body: 'Body 1',
+      archive: false,
+      id: 1
+    },
+    {
+      title: 'Chill',
+      body: 'Body 2',
+      archive: false,
+      id: 2
+    },
+    {
+      title: 'Dubstep',
+      body: 'Body 3',
+      archive: false,
+      id: 3
+    },
+    {
+      title: 'Indie',
+      body: 'Body 4',
+      archive: false,
+      id: 4
+    },
+    {
+      title: 'Rap',
+      body: 'Body 5',
+      archive: true,
+      id: 5
+    },
+    {
+      title: 'Cowbell',
+      body: 'Body 6',
+      archive: true,
+      id: 6
+    }
   ];
 })
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});

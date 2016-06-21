@@ -12,21 +12,54 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
+  //initializing empty note
+  $scope.newNote = {};
+
+  // Create the new note modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/new-note.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.noteModal = modal;
+  });
+
+  // Triggered in the new note modal to close it
+  $scope.closeCreateNote = function() {
+    $scope.noteModal.hide();
+  };
+
+  // Open the create note modal
+  $scope.createNote = function() {
+    $scope.noteModal.show();
+  };
+
+  // Perform the create new note action when the user submits the note form
+  $scope.doCreateNote = function() {
+    console.log('Created note', $scope.newNote);
+    $scope.newNote.archive = false;
+    //adding new note to notes array
+    $scope.notes.push($scope.newNote);
+
+    // Simulate a created note delay.
+    $timeout(function() {
+      $scope.closeCreateNote();
+    }, 1000);
+  };
+
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.loginModal = modal;
   });
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
-    $scope.modal.hide();
+    $scope.loginModal.hide();
   };
 
-  // Open the login modal
+  // Open the create modal
   $scope.login = function() {
-    $scope.modal.show();
+    $scope.loginModal.show();
   };
 
   // Perform the login action when the user submits the login form

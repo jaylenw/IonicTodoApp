@@ -1,9 +1,15 @@
 <ion-view view-title="Notes">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="note in notes | filter:{archive: false}" href="#/app/notes/{{$index}}">
-        {{note.title}}
-      </ion-item>
-    </ion-list>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="searchText" placeholder="Search">
+      </label>
+    </div>
+  <ion-list>
+    <ion-item ng-repeat="note in notes | filter:{archive: false} | filter: searchText" href="#/app/notes/{{$index}}">
+      {{note.title}}
+    </ion-item>
+  </ion-list>
   </ion-content>
 </ion-view>

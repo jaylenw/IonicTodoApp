@@ -44,38 +44,32 @@ angular.module('starter.controllers', [])
     {
       title: 'Reggae',
       body: 'Body 1',
-      archive: false,
-      id: 1
+      archive: false
     },
     {
       title: 'Chill',
       body: 'Body 2',
-      archive: false,
-      id: 2
+      archive: false
     },
     {
       title: 'Dubstep',
       body: 'Body 3',
-      archive: false,
-      id: 3
+      archive: false
     },
     {
       title: 'Indie',
       body: 'Body 4',
-      archive: false,
-      id: 4
+      archive: false
     },
     {
       title: 'Rap',
       body: 'Body 5',
-      archive: true,
-      id: 5
+      archive: true
     },
     {
       title: 'Cowbell',
       body: 'Body 6',
-      archive: true,
-      id: 6
+      archive: true
     }
   ];
 })

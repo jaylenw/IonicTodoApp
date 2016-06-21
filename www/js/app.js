@@ -41,6 +41,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+  .state('app.archives', {
+    url: '/archives',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/archives.html',
+        controller: 'ArchivesCtrl'
+      }
+    }
+  })
+
   .state('app.single', {
     url: '/notes/:noteId',
     views: {

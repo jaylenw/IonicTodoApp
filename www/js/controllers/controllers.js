@@ -12,11 +12,14 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
-  // Form data for the register modal
-  $scope.registerData = {};
-
   //initializing empty note
   $scope.newNote = {};
+
+  //Initializing our user object
+  $scope.user = {};
+
+  //Initializing our user token
+    $scope.token = localStorage.getItem("token");
 
   //*******************************************************
   //*******************************************************
@@ -77,7 +80,29 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    var payload = {
+      email: $scope.user.email,
+      password: $scope.user.password
+    }
+    User.login(payload, function(response){
+      //storing token from server into browser
+      localStorage.setItem("token", response.token);
+    }, function(err){
+
+        switch (err.status) {
+          case 401:
+            ngNotify.set('Entered Email address or Password are incorrect. Please try again.', 'error');
+            break;
+          case 412:
+            ngNotify.set('Please enter an email address and password and try again.', 'error');
+            break;
+          case 500:
+            ngNotify.set('Could not find your account. Please enter your credentials again.', 'error');
+            break;
+          default:
+            ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
+        }
+    });
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
@@ -108,9 +133,34 @@ angular.module('starter.controllers', [])
     $scope.registerModal.show();
   };
 
-  // Perform the login action when the user submits the login form
+  // Perform the register action when the user submits the login form
   $scope.doRegister = function() {
-    console.log('Doing Registration', $scope.registerData);
+    var payload = {
+      email: $scope.user.email,
+      password: $scope.user.password
+    }
+    User.register(payload, function(response) {
+      ngNotify.set('You are now Registered.', 'success');
+      //storing token from server into browser
+      localStorage.setItem("token", response.token);
+    }, function(err) {
+        switch(err.status){
+          case 406:
+            ngNotify.set(' Entered Email address is not valid. Please enter a valid Email address.', 'error');
+            break;
+          case 409:
+            ngNotify.set('Entered Email has already been registerd. Please enter another Email address.', 'error');
+            break;
+          case 412:
+            ngNotify.set('Entered Email address and Password were not entered successfully. Please enter them again.', 'error');
+            break;
+          case 500:
+            ngNotify.set('We could not save your account. Please try again.', 'error');
+            break;
+          default:
+            ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
+        }
+    });
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system

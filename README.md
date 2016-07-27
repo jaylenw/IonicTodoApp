@@ -1,5 +1,7 @@
 # IonicTodoApp
 
+Website version of this app found [here](https://github.com/jaylenw/AngularJsTodoApp).
+
 #Under Development
 
 Note: Depending on stage of the project and particular issue, the backend must be running properly to test certain features. Information on setting up the backend is below.

@@ -12,8 +12,16 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
+  // Form data for the register modal
+  $scope.registerData = {};
+
   //initializing empty note
   $scope.newNote = {};
+
+  //*******************************************************
+  //*******************************************************
+  //**********NEW NOTE MODAL*******************************
+  //*******************************************************
 
   // Create the new note modal that we will use later
   $ionicModal.fromTemplateUrl('templates/new-note.html', {
@@ -45,6 +53,11 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 
+  //*******************************************************
+  //*******************************************************
+  //************LOGIN MODAL********************************
+  //*******************************************************
+
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -72,6 +85,44 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+
+  //*******************************************************
+  //*******************************************************
+  //************Register MODAL*****************************
+  //*******************************************************
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/register.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.registerModal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeRegister = function() {
+    $scope.registerModal.hide();
+  };
+
+  // Open the create modal
+  $scope.register = function() {
+    $scope.registerModal.show();
+  };
+
+  // Perform the login action when the user submits the login form
+  $scope.doRegister = function() {
+    console.log('Doing Registration', $scope.registerData);
+
+    // Simulate a login delay. Remove this and replace with your login
+    // code if using a login system
+    $timeout(function() {
+      $scope.closeRegister();
+    }, 1000);
+  };
+
+  //*******************************************************
+  //*******************************************************
+  //*******************************************************
+  //*******************************************************
 
   $scope.notes = [
     {

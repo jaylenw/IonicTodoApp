@@ -8,12 +8,12 @@ Note: Depending on stage of the project and particular issue, the backend must b
 
 ## Build, Testing, & Development
 
-1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Ionic](http://ionicframework.com/), and [Bower](https://bower.io/) installed on your system globally. If running a Debian/Ubuntu system and you do not have the packages installed globaly, run these commands below: 
+1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Ionic](http://ionicframework.com/), and [Bower](https://bower.io/) installed on your system globally. If running a Debian/Ubuntu system and you do not have the packages installed globaly, run these commands below:
 
         sudo apt-get update  
         sudo apt-get install nodejs  
         sudo ln -s /usr/bin/nodejs /usr/bin/node  
-        sudo apt-get install npm 
+        sudo apt-get install npm
         sudo npm install -g npm
         sudo npm install -g bower
         sudo npm install -g ionic
@@ -32,17 +32,20 @@ Note: Change the javascript files in /www/js/services/, task.js and user.js to h
 
 1. The backend for this app is found here at this repo: https://github.com/julianpoy/jaylenBackend
 
-2. To run the backend, first clone the repo above. Second, install forever from npm globally, `npm install forever -g`. You may    need to run `sudo npm install forever -g` if on Ubuntu/Debian. 
+2. To run the backend, first clone the repo above. Second, install forever from npm globally, `npm install forever -g`. You may    need to run `sudo npm install forever -g` if on Ubuntu/Debian.
    You can use [forever](https://www.npmjs.com/package/forever) to run the backend server and autorestart it.
 
-3. Next, install mongodb on your system globally and have it running. If on a Ubuntu/Debian system, you would run 
+3. Next, install mongodb on your system globally and have it running. If on a Ubuntu/Debian system, you would run
    `sudo apt-get install mongodb`.
 
-4. After having cloned the repo linked above and are in the root of the folder, run `npm install && bower install`. 
+4. After having cloned the repo linked above and are in the root of the folder, run `npm install && bower install`.
 
 5. Use forever to start the server, run `forever start bin/www`.
 
-6. You should now be able to get and post tasks to the server after registering an account through your site. 
+6. You should now be able to get and post tasks to the server after registering an account through your site.
+
+7. If you need to kill `forever` for any reasons, run `forever list`. You will then see a list of all `forever` processes. Kill the `forever` process you want
+by identifying the `pid` and killing it by running `forever stop pidNUM` where pidNUM is the pid number is the process you would like to kill.
 
 --------------------------------------------------------------------------------------------------------------
 

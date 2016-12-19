@@ -30,7 +30,7 @@ Note: Depending on stage of the project and particular issue, the backend must b
 Note: Change the javascript files in /www/js/services/, task.js and user.js to have your url and port number
    that will be directing requests to your backend. Do not change anything after the port number. Forever (server we will be using) by defualt listens to port 3000. Replace "yourdomain.com" with the domain you will be using. It will look like this, "http://yourdomain.com/3000"
 
-1. The backend for this app is found here at this repo: https://github.com/julianpoy/jaylenBackend
+1. The backend for this app is found here at this repo: https://github.com/jaylenw/ToDoBackend
 
 2. To run the backend, first clone the repo above. Second, install forever from npm globally, `npm install forever -g`. You may    need to run `sudo npm install forever -g` if on Ubuntu/Debian.
    You can use [forever](https://www.npmjs.com/package/forever) to run the backend server and autorestart it.

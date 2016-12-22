@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, User, Task, ngNotify) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, User, Task, ionicToast, ngNotify) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -186,11 +186,12 @@ angular.module('starter.controllers', [])
       },
       function(response){
         $scope.notes = response;
+        toast("Successfully Synced Notes with the Server");
       },
       function(err){
         switch(err){
           case 500:
-            console.log("Error Occured Connecting with the Server");
+            toast("Error Occured Connecting with the Server");
           break;
         }
       }
@@ -198,9 +199,15 @@ angular.module('starter.controllers', [])
     )
   };
 
-  function onpageLoad(){
-    if($scope.token){
-      getTasks();
-    }
+function onpageLoad(){
+  if($scope.token){
+    getTasks();
   }
+}
+
+function toast(message){
+  //message is string, boolean for a button to close the toast, and milliseconds for timeout
+  ionicToast.show(message, 'bottom', false, 4000);
+}
+
 })

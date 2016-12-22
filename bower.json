@@ -6,6 +6,7 @@
     "ionic-platform-web-client": "^0.7.1"
   },
   "dependencies": {
-    "ng-notify": "^0.8.0"
+    "ng-notify": "^0.8.0",
+    "ionic-toast": "^0.4.1"
   }
 }

@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
   $scope.user = {};
 
   //Initializing our user token
-    $scope.token = localStorage.getItem("token");
+  $scope.token = localStorage.getItem("token");
 
   //*******************************************************
   //*******************************************************
@@ -87,6 +87,8 @@ angular.module('starter.controllers', [])
     User.login(payload, function(response){
       //storing token from server into browser
       localStorage.setItem("token", response.token);
+      //obtain tasks from server
+      getTasks();
     }, function(err){
 
         switch (err.status) {
@@ -173,6 +175,25 @@ angular.module('starter.controllers', [])
   //*******************************************************
   //*******************************************************
   //*******************************************************
+
+  function getTasks(){
+    Task.get(
+      {
+        "token": $scope.token
+      },
+      function(response){
+        $scope.notes = response;
+      },
+      function(err){
+        switch(err){
+          case 500:
+            console.log("Error Occured Connecting with the Server");
+          break;
+        }
+      }
+
+    )
+  };
 
   $scope.notes = [
     {

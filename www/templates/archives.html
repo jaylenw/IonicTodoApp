@@ -7,7 +7,7 @@
       </label>
     </div>
     <ion-list>
-      <ion-item ng-repeat="note in notes | filter:{archive: true} | filter: searchText" href="#/app/notes/{{$index}}">
+      <ion-item ng-repeat="note in notes | filter: searchText" href="#/app/notes/{{$index}}" ng-show="note.archive">
         {{note.title}}
       </ion-item>
     </ion-list>

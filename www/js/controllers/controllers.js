@@ -58,7 +58,7 @@ angular.module('starter.controllers', [])
           //Get all tasks from server
           getTasks();
           //reset $scope.note to init values
-          $scope.note = {};
+          $scope.newNote = {};
           toast("Syncing Note with the Server");
           }, function(err){
                toast("Error, Note Could Not be Added. Please try Again Later.");

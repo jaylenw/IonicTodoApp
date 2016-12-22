@@ -145,25 +145,25 @@ angular.module('starter.controllers', [])
       password: $scope.user.password
     }
     User.register(payload, function(response) {
-      ngNotify.set('You are now Registered.', 'success');
+      getTasks();
       //storing token from server into browser
       localStorage.setItem("token", response.token);
     }, function(err) {
         switch(err.status){
           case 406:
-            ngNotify.set(' Entered Email address is not valid. Please enter a valid Email address.', 'error');
+            toast("Entered Email address is not valid. Please enter a valid Email address.");
             break;
           case 409:
-            ngNotify.set('Entered Email has already been registerd. Please enter another Email address.', 'error');
+            toast("Entered Email has already been registerd. Please enter another Email address.");
             break;
           case 412:
-            ngNotify.set('Entered Email address and Password were not entered successfully. Please enter them again.', 'error');
+            toast("Entered Email address and Password were not entered successfully. Please enter them again.");
             break;
           case 500:
-            ngNotify.set('We could not save your account. Please try again.', 'error');
+            toast("We could not save your account. Please try again.");
             break;
           default:
-            ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
+            toast("An error occured processing your request to the server. Please try again.");
         }
     });
 

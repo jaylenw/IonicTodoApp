@@ -48,10 +48,21 @@ angular.module('starter.controllers', [])
 
   // Perform the create new note action when the user submits the note form
   $scope.doCreateNote = function() {
-    console.log('Created note', $scope.newNote);
-    $scope.newNote.archive = false;
-    //adding new note to notes array
-    $scope.notes.push($scope.newNote);
+    var payload =  {
+        "title": $scope.newNote.title,
+        "body": $scope.newNote.body,
+        "token": $scope.token
+      }
+      Task.create(payload,
+        function(response){
+          //Get all tasks from server
+          getTasks();
+          //reset $scope.note to init values
+          $scope.note = {};
+          toast("Syncing Note with the Server");
+          }, function(err){
+               toast("Error, Note Could Not be Added. Please try Again Later.");
+      });
 
     // Simulate a created note delay.
     $timeout(function() {
@@ -179,6 +190,7 @@ angular.module('starter.controllers', [])
   //*******************************************************
   //*******************************************************
 
+  //retrieves tasks
   function getTasks(){
     Task.get(
       {
@@ -198,13 +210,14 @@ angular.module('starter.controllers', [])
 
     )
   };
-
+//gets tasks on page load
 function onpageLoad(){
   if($scope.token){
     getTasks();
   }
 }
 
+//generic toast notifications
 function toast(message){
   //message is string, boolean for a button to close the toast, and milliseconds for timeout
   ionicToast.show(message, 'bottom', false, 4000);

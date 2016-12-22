@@ -96,16 +96,16 @@ angular.module('starter.controllers', [])
 
         switch (err.status) {
           case 401:
-            ngNotify.set('Entered Email address or Password are incorrect. Please try again.', 'error');
+            toast("Entered Email address or Password are incorrect. Please try again.");
             break;
           case 412:
-            ngNotify.set('Please enter an email address and password and try again.', 'error');
+            toast("Please enter an email address and password and try again.");
             break;
           case 500:
-            ngNotify.set('Could not find your account. Please enter your credentials again.', 'error');
+            toast("Could not find your account. Please enter your credentials again.");
             break;
           default:
-            ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
+            toast("An error occured processing your request to the server. Please try again.");
         }
     });
 
@@ -145,9 +145,9 @@ angular.module('starter.controllers', [])
       password: $scope.user.password
     }
     User.register(payload, function(response) {
-      getTasks();
       //storing token from server into browser
       localStorage.setItem("token", response.token);
+      getTasks();
     }, function(err) {
         switch(err.status){
           case 406:

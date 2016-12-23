@@ -211,6 +211,7 @@ angular.module('starter.controllers', [])
           $window.location.reload(true);
           //reseting scope.user
           $scope.user = {};
+          $scope.token = null;
         },
         function(err){
           switch(err.status){

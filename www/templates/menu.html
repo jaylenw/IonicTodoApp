@@ -18,13 +18,13 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login(); showUserLoginRegisterPopup()">
+        <ion-item menu-close ng-hide="token" ng-click="login()">
           Login
         </ion-item>
-        <ion-item menu-close ng-click="logout()">
+        <ion-item menu-close ng-show="token" ng-click="logout()">
           Logout
         </ion-item>
-        <ion-item menu-close ng-click="register(); showUserLoginRegisterPopup()">
+        <ion-item menu-close ng-hide="token" ng-click="register()">
           Register
         </ion-item>
         <ion-item menu-close href="#/app/notes">

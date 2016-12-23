@@ -9,6 +9,7 @@
   <ion-list>
     <ion-item ng-repeat="note in notes | filter: searchText" href="#/app/notes/{{$index}}" ng-show="!note.archive">
       {{note.title}}
+      <div class="date-notes-menu">{{formatDate(note.date)}}</div>
     </ion-item>
   </ion-list>
   </ion-content>

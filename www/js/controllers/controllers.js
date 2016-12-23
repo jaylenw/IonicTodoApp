@@ -240,9 +240,9 @@ angular.module('starter.controllers', [])
      // Show the action sheet
      var hideSheet = $ionicActionSheet.show({
        buttons: [
-         { text: '<i class="icon ion-upload"></i><div class="blue-text"><strong>Save Note</strong></div>' },
-         { text: '<i class="icon ion-archive"></i><div class="blue-text"><strong>Archive Note</strong></div>' },
-         { text: '<i class="icon ion-refresh"></i><div class="blue-text"><strong>Restore Note from Archives</strong></div>'},
+         { text: '<i class="icon ion-upload"></i><div class="blue-text button-border-bottom"><strong>Save Note</strong></div>' },
+         { text: '<i class="icon ion-archive"></i><div class="blue-text button-border-bottom"><strong>Archive Note</strong></div>' },
+         { text: '<i class="icon ion-refresh"></i><div class="blue-text button-border-bottom"><strong>Restore Note from Archives</strong></div>'},
          { text: '<i class="icon ion-trash-b"></i><div class="red-text"><strong>Delete Note</strong></div>'}
        ],
       //  destructiveText: 'Delete',
@@ -328,7 +328,7 @@ angular.module('starter.controllers', [])
 
   //*******************************************************
   //*******************************************************
-  //*******************************************************
+  //************Functions that are Called Repeatedly*******
   //*******************************************************
 
   //retrieves tasks
@@ -351,17 +351,22 @@ angular.module('starter.controllers', [])
 
     )
   };
-//gets tasks on page load
-function onpageLoad(){
-  if($scope.token){
-    getTasks();
+  //gets tasks on page load
+  function onpageLoad(){
+    if($scope.token){
+      getTasks();
+    }
   }
-}
 
-//generic toast notifications
-function toast(message){
-  //message is string, boolean for a button to close the toast, and milliseconds for timeout
-  ionicToast.show(message, 'bottom', false, 4000);
-}
+  //generic toast notifications
+  function toast(message){
+    //message is string, boolean for a button to close the toast, and milliseconds for timeout
+    ionicToast.show(message, 'bottom', false, 4000);
+  }
+
+  //function to return more of a nice date format
+  $scope.formatDate = function(date){
+    return moment.utc(date).toDate().toString();
+  }
 
 })

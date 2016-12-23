@@ -235,7 +235,7 @@ angular.module('starter.controllers', [])
   //*******************************************************
 
   // Triggered on a button click, or some other target
-   $scope.showActionSheet = function() {
+   $scope.showActionSheet = function(noteID) {
 
      // Show the action sheet
      var hideSheet = $ionicActionSheet.show({
@@ -252,6 +252,34 @@ angular.module('starter.controllers', [])
             // add cancel code..
           },
        buttonClicked: function(index) {
+         switch (index) {
+           case 0:
+             //save note
+             break;
+           case 1:
+             //archive note
+             break;
+           case 2:
+             //restore note
+             break;
+           case 3:
+             //delete note
+            var payload = {
+              "id": noteID,
+              "token": $scope.token
+            }
+            Task.delete(payload,
+              function(success){
+                toast("Note Deleted Successfully");
+                //Refreshes the tasks lists
+                getTasks();
+              },
+              function(err){
+                toast("Error Deleting the Note");
+              });
+           default:
+
+         }
          return true;
        }
      });
@@ -262,28 +290,6 @@ angular.module('starter.controllers', [])
      }, 10000);
 
    };
-
-   //*******************************************************
-   //*******************************************************
-   //*****************User Login/Register Popup*****************
-   //*******************************************************
-
-   //In the event a user logins or registers when another user
-   //is already logged in
-   // An alert dialog
- $scope.showUserLoginRegisterPopup = function() {
-
-   if($scope.token){
-     var alertPopup = $ionicPopup.alert({
-       title: 'You are Logged In',
-       template: 'Please Logout if another User would Like to Login or Register.'
-     });
-
-     alertPopup.then(function(res) {
-      //  console.log('Thank you for not eating my delicious ice cream cone');
-     });
-   }
- };
 
 
   //*******************************************************

@@ -16,3 +16,7 @@
   margin-bottom: 20px;
   resize: none;
 }
+
+.large-title {
+  font-size: 36px;
+}

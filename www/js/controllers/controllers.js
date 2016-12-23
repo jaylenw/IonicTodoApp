@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, User, Task, ionicToast) {
+.controller('AppCtrl', function($scope, $ionicModal, $ionicActionSheet, $timeout, User, Task, ionicToast) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -184,6 +184,40 @@ angular.module('starter.controllers', [])
       $scope.closeRegister();
     }, 1000);
   };
+
+  //*******************************************************
+  //*******************************************************
+  //***************Note Action Sheet*********************
+  //*******************************************************
+
+  // Triggered on a button click, or some other target
+   $scope.showActionSheet = function() {
+
+     // Show the action sheet
+     var hideSheet = $ionicActionSheet.show({
+       buttons: [
+         { text: '<i class="icon ion-edit"></i><b>Edit Note</b>' },
+         { text: '<i class="icon ion-archive"></i><b>Archive</b>' },
+         { text: '<i class="icon ion-refresh"></i><b>Restore</b>'},
+         { text: '<i class="icon ion-trash-b"></i><b>Delete</b>'}
+       ],
+      //  destructiveText: 'Delete',
+       titleText: 'Modify Your Note',
+       cancelText: 'Cancel',
+       cancel: function() {
+            // add cancel code..
+          },
+       buttonClicked: function(index) {
+         return true;
+       }
+     });
+
+     // For example's sake, hide the sheet after two seconds
+     $timeout(function() {
+       hideSheet();
+     }, 10000);
+
+   };
 
   //*******************************************************
   //*******************************************************

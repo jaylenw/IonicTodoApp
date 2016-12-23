@@ -196,13 +196,13 @@ angular.module('starter.controllers', [])
      // Show the action sheet
      var hideSheet = $ionicActionSheet.show({
        buttons: [
-         { text: '<i class="icon ion-upload"></i><b>Save Note</b>' },
-         { text: '<i class="icon ion-archive"></i><b>Archive Note</b>' },
-         { text: '<i class="icon ion-refresh"></i><b>Restore Note from Archives</b>'},
-         { text: '<i class="icon ion-trash-b"></i><b>Delete Note</b>'}
+         { text: '<i class="icon ion-upload"></i><div class="blue-text"><strong>Save Note</strong></div>' },
+         { text: '<i class="icon ion-archive"></i><div class="blue-text"><strong>Archive Note</strong></div>' },
+         { text: '<i class="icon ion-refresh"></i><div class="blue-text"><strong>Restore Note from Archives</strong></div>'},
+         { text: '<i class="icon ion-trash-b"></i><div class="red-text"><strong>Delete Note</strong></div>'}
        ],
       //  destructiveText: 'Delete',
-       titleText: 'Modify Your Note',
+       titleText: '<strong>Modify Your Note</strong>',
        cancelText: 'Cancel',
        cancel: function() {
             // add cancel code..

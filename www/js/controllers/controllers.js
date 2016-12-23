@@ -235,7 +235,7 @@ angular.module('starter.controllers', [])
   //*******************************************************
 
   // Triggered on a button click, or some other target
-   $scope.showActionSheet = function(noteID) {
+   $scope.showActionSheet = function(noteID, noteTitle, noteBody) {
 
      // Show the action sheet
      var hideSheet = $ionicActionSheet.show({
@@ -253,11 +253,23 @@ angular.module('starter.controllers', [])
           },
        buttonClicked: function(index) {
          switch (index) {
+           //save/update note
            case 0:
-             //save note
+             var payload = {
+                "id": noteID,
+                "title": noteTitle,
+                "body": noteBody,
+                "token": $scope.token
+              };
+              Task.update(payload,function(success){
+                toast("Note Updated Successfully");
+                getTasks();
+              }, function(err){
+                  toast("Error Updating the Note");
+              });
              break;
+           //archive note
            case 1:
-             //archive note
              var payload = {
               "id": noteID,
               "archive": true,
@@ -270,8 +282,8 @@ angular.module('starter.controllers', [])
                   toast("Error Updating the Note");
              });
              break;
+           //restore note
            case 2:
-             //restore note
              var payload = {
               "id": noteID,
               "archive": false,
@@ -284,8 +296,8 @@ angular.module('starter.controllers', [])
                   toast("Error Updating the Note");
              });
              break;
+           //delete note
            case 3:
-             //delete note
             var payload = {
               "id": noteID,
               "token": $scope.token

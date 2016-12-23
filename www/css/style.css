@@ -34,3 +34,9 @@
 .red-text {
   color: #d14;
 }
+
+.background-blue-footer {
+  background-color: #387ef5;
+  border-color: #387ef5;
+  color: #fff;
+}

@@ -258,9 +258,31 @@ angular.module('starter.controllers', [])
              break;
            case 1:
              //archive note
+             var payload = {
+              "id": noteID,
+              "archive": true,
+              "token": $scope.token
+             };
+             Task.update(payload ,function(success){
+               toast("Note Updated Successfully");
+               getTasks();
+             }, function(err){
+                  toast("Error Updating the Note");
+             });
              break;
            case 2:
              //restore note
+             var payload = {
+              "id": noteID,
+              "archive": false,
+              "token": $scope.token
+             };
+             Task.update(payload ,function(success){
+               toast("Note Updated Successfully");
+               getTasks();
+             }, function(err){
+                  toast("Error Updating the Note");
+             });
              break;
            case 3:
              //delete note

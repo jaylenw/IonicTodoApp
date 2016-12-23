@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicActionSheet, $timeout, User, Task, ionicToast) {
+.controller('AppCtrl', function($scope, $window, $ionicModal, $ionicPopup, $ionicActionSheet, $timeout, User, Task, ionicToast) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -101,6 +101,7 @@ angular.module('starter.controllers', [])
     User.login(payload, function(response){
       //storing token from server into browser
       localStorage.setItem("token", response.token);
+      $scope.token = localStorage.getItem("token");
       //obtain tasks from server
       getTasks();
     }, function(err){
@@ -158,6 +159,7 @@ angular.module('starter.controllers', [])
     User.register(payload, function(response) {
       //storing token from server into browser
       localStorage.setItem("token", response.token);
+      $scope.token = localStorage.getItem("token");
       getTasks();
     }, function(err) {
         switch(err.status){
@@ -184,6 +186,47 @@ angular.module('starter.controllers', [])
       $scope.closeRegister();
     }, 1000);
   };
+
+  //*******************************************************
+  //*******************************************************
+  //************Logout Action********************************
+  //*******************************************************
+
+  $scope.logout = function(){
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'You are Logged In',
+      template: 'Hit "Ok" if You would Like to Logout.'
+    });
+
+    confirmPopup.then(function(res) {
+      if(res){
+        var payload = {
+        "token": $scope.token
+      }
+      User.logout(payload,
+        function(success){
+          //Removing Local Token From Browser
+          localStorage.removeItem("token");
+          //redirecting user to home page and resets ionic
+          $window.location.reload(true);
+          //reseting scope.user
+          $scope.user = {};
+        },
+        function(err){
+          switch(err.status){
+            case 500:
+              toast("Error occured Logging Out");
+            default:
+              toast("An Error Occured Processing Your Request. Please try Again.");
+          }
+        });
+      }
+      else {
+        toast("You have remained Logged In.")
+      }
+
+    });
+  }
 
   //*******************************************************
   //*******************************************************
@@ -218,6 +261,29 @@ angular.module('starter.controllers', [])
      }, 10000);
 
    };
+
+   //*******************************************************
+   //*******************************************************
+   //*****************User Login/Register Popup*****************
+   //*******************************************************
+
+   //In the event a user logins or registers when another user
+   //is already logged in
+   // An alert dialog
+ $scope.showUserLoginRegisterPopup = function() {
+
+   if($scope.token){
+     var alertPopup = $ionicPopup.alert({
+       title: 'You are Logged In',
+       template: 'Please Logout if another User would Like to Login or Register.'
+     });
+
+     alertPopup.then(function(res) {
+      //  console.log('Thank you for not eating my delicious ice cream cone');
+     });
+   }
+ };
+
 
   //*******************************************************
   //*******************************************************

@@ -19,22 +19,22 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close ng-hide="token" ng-click="login()">
-          Login
+          Login <i class="icon ion-log-in"></i>
         </ion-item>
         <ion-item menu-close ng-show="token" ng-click="logout()">
-          Logout
+          Logout <i class="icon ion-log-out"></i>
         </ion-item>
         <ion-item menu-close ng-hide="token" ng-click="register()">
-          Register
+          Register <i class="icon ion-ios-personadd-outline"></i>
         </ion-item>
         <ion-item menu-close href="#/app/notes">
-          Notes
+          Notes <i class="icon ion-ios-paper-outline"></i>
         </ion-item>
-        <ion-item menu-close href="#/app/archives">
-          Archived Notes
+        <ion-item menu-close ng-show="token" href="#/app/archives">
+          Archived Notes <i class="icon ion-ios-box-outline"></i>
         </ion-item>
-        <ion-item menu-close ng-click="createNote()">
-          Create New Note
+        <ion-item menu-close ng-show="token" ng-click="createNote()">
+          Create New Note <i class="icon ion-ios-compose-outline"></i>
         </ion-item>
       </ion-list>
     </ion-content>

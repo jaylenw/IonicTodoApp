@@ -30,10 +30,10 @@
         <ion-item menu-close href="#/app/notes">
           Notes
         </ion-item>
-        <ion-item menu-close href="#/app/archives">
+        <ion-item menu-close ng-show="token" href="#/app/archives">
           Archived Notes
         </ion-item>
-        <ion-item menu-close ng-click="createNote()">
+        <ion-item menu-close ng-show="token" ng-click="createNote()">
           Create New Note
         </ion-item>
       </ion-list>

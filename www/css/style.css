@@ -23,6 +23,11 @@
   margin-right: 12px;
 }
 
+.hello-message-padding {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .card-text-area {
   width: 100%;
   height: 100%;

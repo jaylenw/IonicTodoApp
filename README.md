@@ -2,9 +2,16 @@
 
 Website version of this app found [here](https://github.com/jaylenw/AngularJsTodoApp).
 
-#Under Development
+##Description
 
-Note: Depending on stage of the project and particular issue, the backend must be running properly to test certain features. Information on setting up the backend is below.
+Users are able to use this App as a Todo-List or a Note Taking application.
+
+##Features
+
+* User Login, Logout, & Registration
+* Add, Edit, Delete, and Archive Notes
+* Supports Markdown
+* Built for Android
 
 ## Build, Testing, & Development
 

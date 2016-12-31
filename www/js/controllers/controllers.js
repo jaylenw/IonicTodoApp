@@ -235,11 +235,12 @@ angular.module('starter.controllers', [])
   //*******************************************************
 
   // Triggered on a button click, or some other target
-   $scope.showActionSheet = function(noteID, noteTitle, noteBody) {
+   $scope.showActionSheet = function(noteID, noteTitle, noteBody, editMode) {
 
      // Show the action sheet
      var hideSheet = $ionicActionSheet.show({
        buttons: [
+         { text: '<i class="icon ion-edit"></i><div class="blue-text button-border-bottom"><strong>Edit Note</strong></div>' },
          { text: '<i class="icon ion-upload"></i><div class="blue-text button-border-bottom"><strong>Save Note</strong></div>' },
          { text: '<i class="icon ion-archive"></i><div class="blue-text button-border-bottom"><strong>Archive Note</strong></div>' },
          { text: '<i class="icon ion-refresh"></i><div class="blue-text button-border-bottom"><strong>Restore Note from Archives</strong></div>'},
@@ -253,8 +254,13 @@ angular.module('starter.controllers', [])
           },
        buttonClicked: function(index) {
          switch (index) {
-           //save/update note
+           //edit note, responsible for markdown to textarea
            case 0:
+            $scope.editMode = true;
+            toast("Edit Mode Active");
+           break;
+           //save/update note
+           case 1:
              var payload = {
                 "id": noteID,
                 "title": noteTitle,
@@ -263,13 +269,14 @@ angular.module('starter.controllers', [])
               };
               Task.update(payload,function(success){
                 toast("Note Updated Successfully");
+                $scope.editMode = false;
                 getTasks();
               }, function(err){
                   toast("Error Updating the Note");
               });
              break;
            //archive note
-           case 1:
+           case 2:
              var payload = {
               "id": noteID,
               "archive": true,
@@ -283,7 +290,7 @@ angular.module('starter.controllers', [])
              });
              break;
            //restore note
-           case 2:
+           case 3:
              var payload = {
               "id": noteID,
               "archive": false,
@@ -297,7 +304,7 @@ angular.module('starter.controllers', [])
              });
              break;
            //delete note
-           case 3:
+           case 4:
             var payload = {
               "id": noteID,
               "token": $scope.token

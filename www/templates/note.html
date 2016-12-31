@@ -2,9 +2,10 @@
   <ion-content>
     <textarea class="large-title blue-text title-text-area margin-note-text" ng-model="note.title">{{note.title}}</textarea>
     <p class="margin-note-text"><strong><em>{{formatDate(note.date)}}</em></strong></p>
-    <textarea class="card-text-area margin-note-text" ng-model="note.body">{{note.body}}</textarea>
+    <div class="markdown-div" markdown="note.body" ng-hide="editMode"></div>
+    <textarea class="card-text-area margin-note-text" ng-model="note.body" ng-show="editMode">{{note.body}}</textarea>
   </ion-content>
   <div class="bar bar-footer background-blue-footer">
-    <div class="title" ng-click="showActionSheet(note._id, note.title, note.body)"> <i class="icon ion-grid"> Options</i></div>
+    <div class="title" ng-click="showActionSheet(note._id, note.title, note.body, note.EditMode)"> <i class="icon ion-grid"> Options</i></div>
   </div>
 </ion-view>

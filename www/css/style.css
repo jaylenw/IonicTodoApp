@@ -18,7 +18,7 @@
   resize: none;
 }
 
-.margin-note-text {
+.margin-note-text, .markdown-div {
   margin-left: 12px;
   margin-right: 12px;
 }

@@ -15,7 +15,7 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 ## Build, Testing, & Development
 
-1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Ionic](http://ionicframework.com/), and [Bower](https://bower.io/) installed on your system globally. If running a Debian/Ubuntu system and you do not have the packages installed globaly, run these commands below:
+1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Ionic](http://ionicframework.com/), and [Bower](https://bower.io/) installed on your system globally. This guide assumes you are running a 16.04 LTS 64bit Ubuntu system. If running a Debian/Ubuntu system and you do not have the packages installed globaly, run these commands below:
 
         sudo apt-get update  
         sudo apt-get install nodejs  

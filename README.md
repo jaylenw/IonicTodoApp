@@ -1,6 +1,6 @@
 # IonicTodoApp
 
-Website version of this app found [here](https://github.com/jaylenw/AngularJsTodoApp).
+Website version of this app found [here](https://github.com/jaylenw/AngularJsTodoApp). Desktop version of this app is found [here](https://github.com/jaylenw/ElectronTodoApp).
 
 ##Description
 

@@ -33,6 +33,8 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 4. Run `ionic serve` for live preview. You can then browse the site after opening your browser to the url that ionic has informed you, usually `http://localhost:8100`.
 
+Optional: If you would like to have a web optimized build for deployment, as if you want to put it on a web server or use it in [Electron](http://electron.atom.io/), run `gulp build-web`. The folder `www-dist` will have optimized files for deployment.
+
 
 ### Setting up the Backend
 

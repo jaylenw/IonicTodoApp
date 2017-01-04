@@ -60,6 +60,10 @@
   border-bottom-style: solid;
 }
 
+.button-radius-none {
+  border-radius: 0px;
+}
+
 .background-blue-footer {
   background-color: #387ef5;
   border-color: #387ef5;

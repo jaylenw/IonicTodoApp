@@ -7,8 +7,8 @@
       </label>
     </div>
     <p class="large-title hello-message" ng-show="!notes">Welcome! Once you create your notes, they will appear here!</p>
-    <button class="button button-block button-positive" ng-show="!notes" ng-click="login()" type="submit">Login</button>
-    <button class="button button-block button-positive" ng-show="!notes" ng-click="register()" type="submit">Register</button>
+    <button class="button button-block button-positive button-radius-none" ng-show="!notes" ng-click="login()" type="submit">Login</button>
+    <button class="button button-block button-positive button-radius-none" ng-show="!notes" ng-click="register()" type="submit">Register</button>
   <ion-list>
     <ion-item ng-repeat="note in notes | filter: searchText" href="#/app/notes/{{$index}}" ng-show="!note.archive">
       {{note.title}}

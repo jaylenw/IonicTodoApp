@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><!-- this head contains gulp-ionic-webbuild marker comments, do not remove them -->
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
@@ -13,6 +13,7 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <!-- build:js({www,www-dist/partials}) js/app.build.js -->
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
@@ -37,6 +38,9 @@
     <script src="lib/showdown/dist/showdown.js"></script>
     <script src="lib/ng-showdown/dist/ng-showdown.js"></script>
 
+    <!-- inject:partials -->
+    <!-- endinject -->
+    <!-- endbuild -->
   </head>
 
   <body ng-app="starter">

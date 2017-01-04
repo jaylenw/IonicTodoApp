@@ -49,3 +49,7 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
+require('gulp-ionic-webbuild')(gulp, {
+  templatesModule: 'starter'  //name of our angularjs module for this app
+});

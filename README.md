@@ -103,6 +103,10 @@ You will find an unsigned apk in `IonicTodoApp/platforms/android/build/outputs/a
 If you want to push your app to the Google Play store, follow the instructions
 [here](http://ionicframework.com/docs/guide/publishing.html).
 
+Note: If for some reason you encounter a build error with a java.io.FileNotFoundException,
+run `ionic build android` or `ionic build android --release` one more time and the build
+process will correct itself.
+
 If you would like to change the application's icon and images, do so in the
 `resources` folder.
 

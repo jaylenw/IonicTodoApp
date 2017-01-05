@@ -50,7 +50,7 @@ Install all sdk packages
 Set the path
 `nano ~/.bashrc`
 
-Add the line below to nano. May need to update the version number to the latest.
+Add the line below to nano.
 
 `export ANDROID_HOME=~/android-sdk-linux`
 `export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
@@ -62,10 +62,12 @@ Exit out of nano
 `source ~/.bashrc`
 
 For adb
+
         sudo apt install libdb1-compat tzdata initscripts
         sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
 
 For aapt
+
         sudo apt install zlib1g-dev libncurses5-dev
         sudo apt-get install zlib1g:i386
 
@@ -76,15 +78,16 @@ run `ionic build android`.
 If you get an error saying you have not accepted the license agreement,
 install the platform and accept the license like this
 
-android update sdk -u -a -t <platform number>
+`android update sdk -u -a -t <platform number>`
 
 You could also change the Android SDK/platform version by view the highest number
 of platform installed by going to `~/android-sdk-linux/platforms`. Noting the highest
 version number, in this particular example, 23, make these changes below in these files.
 This should be done in two files:
-`myApp/platforms/android/project.properties`
+`myApp/platforms/android/project.properties` and
 `myApp/platforms/android/CordovaLib/project.properties`
-	       # Project target.
+
+         # Project target.
 	       target=android-23
 
 `myApp/platforms/android/project.properties myApp/platforms/android/CordovaLib/project.properties`

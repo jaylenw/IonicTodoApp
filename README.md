@@ -27,6 +27,7 @@ Users are able to use this App as a Todo-List or a Note Taking application.
         sudo npm install -g bower
         sudo npm install -g ionic@1.7.16
         sudo apt-get install openjdk-8-jdk
+        sudo dpkg --add-architecture i386
 
 2. Clone this repo.
 

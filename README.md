@@ -102,7 +102,7 @@ Also the manifest should be updated:
 At the root of the project run `ionic build android`
 You will then find a debugging apk in `platforms/android/build/outputs/apk/`
 
-Run `ionic build --release` to get the production ready apk. You may install it
+Run `ionic build android --release` to get the production ready apk. You may install it
 on your Android devices using the installation from unknown sources option in
 your android device. You will find an unsigned apk in `platforms/android/build/outputs/apk/`.
 

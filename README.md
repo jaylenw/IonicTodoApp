@@ -69,7 +69,7 @@ Exit out of nano
 
 Next close your terminal and reopen it to the directory of this project.
 
-run `ionic build android`.
+Run `ionic build android`.
 
 You could also change the Android SDK/platform version by view the highest number
 of platform installed by going to `your-path-of-contents-android-studio-download/platforms`. Download
@@ -97,7 +97,7 @@ You will then find a debugging apk in `platforms/android/build/outputs/apk/`
 The debugging apk can be installed with no issues by installation from unknown sources.
 
 Run `ionic build android --release` to get the production ready apk. You may install it
-on your Android devices but it must be signed or you will encounter and error.
+on your Android devices but it must be signed or you will encounter an error.
 You will find an unsigned apk in `IonicTodoApp/platforms/android/build/outputs/apk/`.
 
 If you want to push your app to the Google Play store, follow the instructions

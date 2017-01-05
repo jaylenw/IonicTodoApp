@@ -19,14 +19,14 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Ionic](http://ionicframework.com/), and [Bower](https://bower.io/) installed on your system globally. This guide assumes you are running a 16.04 LTS 64bit Ubuntu system. If running a Debian/Ubuntu system and you do not have the packages installed globaly, run these commands below:
 
-        sudo apt-get update  
-        sudo apt-get install nodejs  
+        sudo apt update  
+        sudo apt install nodejs  
         sudo ln -s /usr/bin/nodejs /usr/bin/node  
-        sudo apt-get install npm
+        sudo apt install npm
         sudo npm install -g npm
         sudo npm install -g bower
         sudo npm install -g ionic@1.7.16
-        sudo apt-get install openjdk-8-jdk
+        sudo apt install openjdk-8-jdk
         sudo dpkg --add-architecture i386
 
 2. Clone this repo.
@@ -70,7 +70,7 @@ For adb
 For aapt
 
         sudo apt install zlib1g-dev libncurses5-dev
-        sudo apt-get install zlib1g:i386
+        sudo apt install zlib1g:i386
 
 Next close your terminal and reopen it to the directory of this project.
 
@@ -124,7 +124,7 @@ Note: Change the javascript file in /www/js/services/, config.js,  to have your 
    You can use [forever](https://www.npmjs.com/package/forever) to run the backend server and autorestart it.
 
 3. Next, install mongodb on your system globally and have it running. If on a Ubuntu/Debian system, you would run
-   `sudo apt-get install mongodb`.
+   `sudo apt install mongodb`.
 
 4. After having cloned the repo linked above and are in the root of the folder, run `npm install && bower install`.
 

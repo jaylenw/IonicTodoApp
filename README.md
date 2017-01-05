@@ -28,6 +28,10 @@ Users are able to use this App as a Todo-List or a Note Taking application.
         sudo npm install -g ionic@1.7.16
         sudo apt install openjdk-8-jdk
         sudo dpkg --add-architecture i386
+        sudo apt install libdb1-compat tzdata initscripts
+        sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
+        sudo apt install zlib1g-dev libncurses5-dev
+        sudo apt install zlib1g:i386
 
 2. Clone this repo.
 
@@ -39,75 +43,69 @@ Optional: If you would like to have a web optimized build for deployment, as if 
 
 ##Building Android APK
 
-Download the Android SDK, run this command in your home directory
-`wget http://dl.google.com/android/android-sdk_r24.2-linux.tgz`
+Use android studio to manage sdks, it can be found (here)[https://developer.android.com/studio/index.html].
 
-`tar -xvf android-sdk_r24.2-linux.tgz`
-`cd android-sdk-linux/tools`
+Download it and extract it.
 
-Install all sdk packages
-`./android update sdk --no-ui`
+Navigate to android-studio/bin/ directory, and execute studio.sh
+
+Follow the instructions to install the latest SDK.
 
 Set the path
 `nano ~/.bashrc`
 
-Add the line below to nano.
+Add the lines below to nano. Note to put the path to the contents Android studio has
+downloaded for your ANDROID_HOME path.
 
-`export ANDROID_HOME=~/android-sdk-linux`
+`export ANDROID_HOME=your-path-of-contents-android-studio-download`
+
 `export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
 
 Exit out of nano
 
 `cd`
 
-`source ~/.bashrc`
-
-For adb
-
-        sudo apt install libdb1-compat tzdata initscripts
-        sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
-
-For aapt
-
-        sudo apt install zlib1g-dev libncurses5-dev
-        sudo apt install zlib1g:i386
+`source ~/.bashrc`    
 
 Next close your terminal and reopen it to the directory of this project.
 
-run `ionic build android`.
-
-If you get an error saying you have not accepted the license agreement,
-install the platform and accept the license like this
-
-`android update sdk -u -a -t <platform number>`
+Run `ionic build android`.
 
 You could also change the Android SDK/platform version by view the highest number
-of platform installed by going to `~/android-sdk-linux/platforms`. Noting the highest
-version number, in this particular example, 23, make these changes below in these files.
-This should be done in two files:
-`myApp/platforms/android/project.properties` and
-`myApp/platforms/android/CordovaLib/project.properties`
+of platform installed by going to `your-path-of-contents-android-studio-download/platforms`. Download
+version number 24 (supports Android Nougat) for the SDK, make these changes below in these files if needed.
+This should be done in two files of our Ionic app directory:
+`IonicTodoApp/latforms/android/project.properties`
+
+        target=android-24
+
+and
+
+`IonicTodoApp/platforms/android/CordovaLib/project.properties`
 
          # Project target.
-	       target=android-23
-
-`myApp/platforms/android/project.properties myApp/platforms/android/CordovaLib/project.properties`
+	       target=android-24
 
 Also the manifest should be updated:
 
-`myApp/platforms/android/platforms/AndroidManifest.xml`
+`IonicTodoApp/platforms/android/platforms/AndroidManifest.xml`
 
-`<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />`
+`<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="24" />`
 
 At the root of the project run `ionic build android`
 You will then find a debugging apk in `platforms/android/build/outputs/apk/`
+The debugging apk can be installed with no issues by installation from unknown sources.
 
 Run `ionic build android --release` to get the production ready apk. You may install it
-on your Android devices using the installation from unknown sources option in
-your android device. You will find an unsigned apk in `platforms/android/build/outputs/apk/`.
+on your Android devices but it must be signed or you will encounter an error.
+You will find an unsigned apk in `IonicTodoApp/platforms/android/build/outputs/apk/`.
 
 If you want to push your app to the Google Play store, follow the instructions
 [here](http://ionicframework.com/docs/guide/publishing.html).
+
+Note: If for some reason you encounter a build error with a java.io.FileNotFoundException,
+run `ionic build android` or `ionic build android --release` one more time and the build
+process will correct itself.
 
 If you would like to change the application's icon and images, do so in the
 `resources` folder.

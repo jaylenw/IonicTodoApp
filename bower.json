@@ -3,12 +3,12 @@
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.3.1",
-    "ionic-platform-web-client": "^0.7.1",
-    "platform.js": "platform#^1.3.3"
+    "ionic-platform-web-client": "~0.7.1",
+    "platform.js": "platform#~1.3.3"
   },
   "dependencies": {
-    "ionic-toast": "^0.4.1",
-    "moment": "^2.17.1",
-    "ng-showdown": "^1.1.0"
+    "ionic-toast": "~0.4.1",
+    "moment": "~2.17.1",
+    "ng-showdown": "~1.1.0"
   }
 }

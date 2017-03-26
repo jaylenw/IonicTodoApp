@@ -8,7 +8,7 @@ This repo is designed for you to deploy your own backend and edit the necessary 
 
 Users are able to use this App as a Todo-List or a Note Taking application.
 
-##Features
+## Features
 
 * User Login, Logout, & Registration
 * Add, Edit, Delete, and Archive Notes

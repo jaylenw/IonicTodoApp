@@ -4,7 +4,7 @@ Website version of this app found [here](https://github.com/jaylenw/AngularJsTod
 
 This repo is designed for you to deploy your own backend and edit the necessary files here to work with it. However, I will soon provide a production version of this by providing an Android APK where anyone may install it, sign up, and use it themselves.
 
-##Description
+## Description
 
 Users are able to use this App as a Todo-List or a Note Taking application.
 
@@ -42,7 +42,7 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 Optional: If you would like to have a web optimized build for deployment, as if you want to put it on a web server or use it in [Electron](http://electron.atom.io/), run `gulp build-web`. The folder `www-dist` will have optimized files for deployment.
 
-##Building Android APK
+## Building Android APK
 
 Use android studio to manage sdks, it can be found (here)[https://developer.android.com/studio/index.html].
 

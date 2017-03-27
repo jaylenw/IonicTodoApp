@@ -1,4 +1,4 @@
-#IonicTodoApp
+# IonicTodoApp
 
 The MIT License (MIT)
 
@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------------
 
-#Angular
+# Angular
 
 The MIT License
 
@@ -50,7 +50,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------------
 
-#Ionic
+# Ionic
 
 Copyright 2015-present Drifty Co.
 http://drifty.com/
@@ -78,7 +78,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ----------------------------------------------------------------------------------
 
-#Moment
+# Moment
 
 Copyright (c) 2011-2016 Tim Wood, Iskren Chernev, Moment.js contributors
 
@@ -105,7 +105,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 -------------------------------------------------------------------------
 
-#ng-showdown
+# ng-showdown
 
 Copyright (c) 2015, showdownjs
 All rights reserved.

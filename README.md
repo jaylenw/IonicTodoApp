@@ -44,7 +44,7 @@ Optional: If you would like to have a web optimized build for deployment, as if 
 
 ## Building Android APK
 
-Use android studio to manage sdks, it can be found (here)[https://developer.android.com/studio/index.html].
+Use android studio to manage sdks, it can be found [here](https://developer.android.com/studio/index.html).
 
 Download it and extract it.
 

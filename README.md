@@ -21,10 +21,9 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
         sudo apt update
         sudo apt install git
+        sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -  
         sudo apt install nodejs  
-        sudo ln -s /usr/bin/nodejs /usr/bin/node  
-        sudo apt install npm
-        sudo npm install -g npm
+        sudo ln -s /usr/bin/nodejs /usr/bin/node
         sudo npm install -g bower
         sudo npm install -g ionic@1.7.16
         sudo apt install openjdk-8-jdk

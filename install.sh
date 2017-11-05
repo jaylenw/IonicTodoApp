@@ -40,7 +40,7 @@ sudo npm install -g npm
 echo "Installing bower packages ...."
 sudo npm install -g bower
 
- echo "Installing ionic@1.7.16 ...."
+echo "Installing ionic@1.7.16 ...."
 sudo npm install -g ionic@1.7.16
 
 echo "Installing openjdk-8-jdk ..."
@@ -50,10 +50,10 @@ echo "Configuring architecture i386 ..."
 sudo dpkg --add-architecture i386
 
 echo "Installing libraries ..."
- sudo apt install libdb1-compat tzdata initscripts -y
- sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 -y
- sudo apt install zlib1g-dev libncurses5- -y
- sudo apt install zlib1g:i386 -y
+sudo apt install libdb1-compat tzdata initscripts -y
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 -y
+sudo apt install zlib1g-dev libncurses5- -y
+sudo apt install zlib1g:i386 -y
 
 echo "Installing npm dependencies ...."
 npm install

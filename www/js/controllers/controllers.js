@@ -373,7 +373,8 @@ angular.module('starter.controllers', [])
 
   //function to return more of a nice date format
   $scope.formatDate = function(date){
-    return moment.utc(date).toDate().toString();
+    //return moment.utc(date).toDate().toString();
+    return moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");
   }
 
 })

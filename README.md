@@ -4,6 +4,8 @@ Website version of this app found [here](https://github.com/jaylenw/AngularJsTod
 
 This project is designed to work with the backend application, [Nota](https://github.com/jaylenw/nota).
 
+Here is a demo of the application, [Nota - IonicTodoApp Video](https://youtu.be/k6MArFEwcLI).
+
 ## Description
 
 Users are able to use this App as a Todo-List or a Note Taking application.
@@ -14,6 +16,14 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 * Add, Edit, Delete, and Archive Notes
 * Supports Markdown
 * Built for Android
+
+
+## Screenshots
+
+![](screenshots/notes.png)
+![](screenshots/menu.png)
+![](screenshots/create-note.png)
+![](screenshots/modify-note-settings.png)
 
 ## Build, Testing, & Development
 

@@ -34,7 +34,6 @@
     "commit": "d2e9fcab0bf0527ceecfe3fb78f8d1f47fecb436"
   },
   "_source": "https://github.com/rajeshwarpatlolla/ionic-toast.git",
-  "_target": "^0.4.1",
-  "_originalSource": "ionic-toast",
-  "_direct": true
+  "_target": "~0.4.1",
+  "_originalSource": "ionic-toast"
 }

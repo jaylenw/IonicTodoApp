@@ -5,10 +5,12 @@
         An Ionic Framework and Cordova project.
     </description>
   <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+      Jaylen Wimbish
     </author>
   <content src="index.html"/>
-  <access origin="*"/>
+  <access origin="*"/> <!-- Controls which network requests (images, XHRs, etc) are allowed to be made (via cordova native hooks). -->
+  <allow-navigation href="*" /> <!-- Controls which URLs the WebView itself can be nagivated to. Applies to top-level navigations only. -->
+  <allow-intent href="*" /> <!-- Controls which URLs the app is allowed to ask the system to open -->
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

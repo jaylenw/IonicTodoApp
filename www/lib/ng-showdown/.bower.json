@@ -46,7 +46,6 @@
     "commit": "a0fcf3179870ecca8fcc5b3fa6f462dee0774382"
   },
   "_source": "https://github.com/showdownjs/ng-showdown.git",
-  "_target": "^1.1.0",
-  "_originalSource": "ng-showdown",
-  "_direct": true
+  "_target": "~1.1.0",
+  "_originalSource": "ng-showdown"
 }

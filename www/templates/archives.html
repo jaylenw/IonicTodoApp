@@ -1,5 +1,6 @@
 <ion-view view-title="Archived Notes">
   <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="fetchOnPullToRefresh()"></ion-refresher>
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>

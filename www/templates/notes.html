@@ -1,5 +1,6 @@
 <ion-view view-title="Notes">
   <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="fetchOnPullToRefresh()"></ion-refresher>
     <div class="list list-inset" ng-show="notes">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
@@ -9,6 +10,10 @@
     <p class="large-title hello-message" ng-show="!notes">Welcome to Nota! Please login or register.</p>
     <button class="button button-block button-positive button-radius-none" ng-show="!notes" ng-click="login()" type="submit">Login</button>
     <button class="button button-block button-positive button-radius-none" ng-show="!notes" ng-click="register()" type="submit">Register</button>
+  <!-- <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="loadOnPullToRefresh()">
+  <ion-refresher> -->
   <ion-list>
     <ion-item ng-repeat="note in notes | orderBy: '-date' | filter: searchText" href="#/app/notes/{{$index}}" ng-show="!note.archive">
       {{note.title}}

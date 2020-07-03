@@ -31,6 +31,12 @@ angular.module('starter.controllers', [])
     });
   }
 
+// open the provided notes page, this solves the search filter issue
+  $scope.openNote = function(note) {
+    var index = $scope.notes.indexOf(note);
+    $window.location.href = "#/app/notes/" + index;
+  }
+
   //*******************************************************
   //*******************************************************
   //**********NEW NOTE MODAL*******************************

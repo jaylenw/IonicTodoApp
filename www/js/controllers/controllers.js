@@ -37,6 +37,11 @@ angular.module('starter.controllers', [])
     $window.location.href = "#/app/notes/" + index;
   }
 
+  // open external link in the system's browser
+  $scope.openExternalLink = function(url, target) {
+    window.open(url, target);
+  }
+
   //*******************************************************
   //*******************************************************
   //**********NEW NOTE MODAL*******************************

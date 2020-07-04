@@ -24,6 +24,19 @@ angular.module('starter.controllers', [])
   //on Page load get the tasks
   onpageLoad();
 
+  // on pull down, refresh by fetching the tasks from the server
+  $scope.fetchOnPullToRefresh = function() {
+    return getTasks(function() {
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+  }
+
+// open the provided notes page, this solves the search filter issue
+  $scope.openNote = function(note) {
+    var index = $scope.notes.indexOf(note);
+    $window.location.href = "#/app/notes/" + index;
+  }
+
   //*******************************************************
   //*******************************************************
   //**********NEW NOTE MODAL*******************************
@@ -339,7 +352,7 @@ angular.module('starter.controllers', [])
   //*******************************************************
 
   //retrieves tasks
-  function getTasks(){
+  function getTasks(cb){
     Task.get(
       {
         "token": $scope.token
@@ -347,6 +360,9 @@ angular.module('starter.controllers', [])
       function(response){
         $scope.notes = response;
         toast("Successfully Synced Notes with the Server");
+        if(cb) {
+          cb();
+        }
       },
       function(err){
         switch(err){

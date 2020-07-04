@@ -1,5 +1,6 @@
 <ion-view view-title="Archived Notes">
   <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="fetchOnPullToRefresh()"></ion-refresher>
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
@@ -7,7 +8,7 @@
       </label>
     </div>
     <ion-list>
-      <ion-item ng-repeat="note in notes | filter: searchText" href="#/app/notes/{{$index}}" ng-show="note.archive">
+      <ion-item ng-repeat="note in notes | orderBy: '-date' | filter: searchText" ng-click="openNote(note)" ng-show="note.archive">
         {{note.title}}
         <div class="date-notes-menu">{{formatDate(note.date)}}</div>
       </ion-item>

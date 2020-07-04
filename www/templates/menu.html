@@ -27,6 +27,9 @@
         <ion-item menu-close ng-hide="token" ng-click="register()">
           Register <i class="icon ion-ios-personadd-outline"></i>
         </ion-item>
+        <ion-item menu-close ng-hide="token" ng-click="openExternalLink('https://nota.jaylenwimbish.com/#/forgot', '_system')">
+          Request Password Reset <i class="icon ion-refresh"></i>
+        </ion-item>
         <ion-item menu-close href="#/app/notes">
           Notes <i class="icon ion-ios-paper-outline"></i>
         </ion-item>
@@ -35,6 +38,9 @@
         </ion-item>
         <ion-item menu-close ng-show="token" ng-click="createNote()">
           Create New Note <i class="icon ion-ios-compose-outline"></i>
+        </ion-item>
+        <ion-item menu-close ng-click="openExternalLink('https://github.com/jaylenw/IonicTodoApp', '_system')">
+          GitHub Repository <i class="icon ion-social-github"></i>
         </ion-item>
       </ion-list>
     </ion-content>

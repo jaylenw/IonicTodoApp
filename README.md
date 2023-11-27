@@ -1,5 +1,7 @@
 # IonicTodoApp
 
+Archived 2023/11/26.
+
 Website version of this app found [here](https://github.com/jaylenw/AngularJsTodoApp). Desktop version of this app is found [here](https://github.com/jaylenw/ElectronTodoApp).
 
 This project is designed to work with the backend application, [Nota](https://github.com/jaylenw/nota).
